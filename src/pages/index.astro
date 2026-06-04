@@ -10,7 +10,7 @@ import "../styles/global.css";
     <title>Paraat, het vrijwilligersrooster voor Leger des Heils</title>
     <meta
       name="description"
-      content="Klaar met puzzelen in Excel. Paraat maakt het weekrooster voor 115 vrijwilligers in minuten, houdt rekening met voorkeuren en laat zien waar plekken open staan."
+      content="Klaar met puzzelen in Excel. Paraat maakt het weekrooster voor 115 vrijwilligers in minuten, beheert je team en houdt rekening met ziekte, afwezigheid en voorkeuren."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,7 +32,7 @@ import "../styles/global.css";
         </a>
         <nav class="flex items-center gap-7 text-sm">
           <a href="#probleem" class="nav-link hidden font-medium text-ink-muted transition hover:text-ink sm:inline">Het probleem</a>
-          <a href="#rooster" class="nav-link hidden font-medium text-ink-muted transition hover:text-ink sm:inline">Hoe het werkt</a>
+          <a href="#rooster" class="nav-link hidden font-medium text-ink-muted transition hover:text-ink sm:inline">De omgeving</a>
           <a href="#contact" class="nav-cta rounded-full bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-accent-600">Plan een demo</a>
         </nav>
       </div>
@@ -56,13 +56,12 @@ import "../styles/global.css";
               Klaar met puzzelen in <span class="font-display-accent text-accent-300">Excel</span>.
             </h1>
             <p class="reveal mt-7 type-lead max-w-xl text-base/85">
-              Elke week opnieuw 115 vrijwilligers inroosteren kost je uren. Paraat maakt het
-              weekrooster in minuten, houdt rekening met voorkeuren en laat precies zien waar nog
-              plekken open staan.
+              Elke week opnieuw 115 vrijwilligers inroosteren kost je uren. Paraat beheert je team en
+              maakt het weekrooster in minuten, met oog voor ziekte, afwezigheid en voorkeuren.
             </p>
             <div class="reveal mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a href="#rooster" class="btn-primary">
-                Bekijk hoe het werkt
+                Bekijk de omgeving
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
               </a>
               <a href="#contact" class="btn-ghost border-base/30 text-base hover:bg-base/10">Plan een demo</a>
@@ -95,15 +94,15 @@ import "../styles/global.css";
 
           <div class="reveal-stagger mt-16 grid gap-px overflow-hidden rounded-[1.5rem] border border-ink/10 bg-ink/10 sm:grid-cols-3">
             <div class="bg-base p-7">
-              <p class="font-mono text-3xl text-accent-500" style="font-family: var(--font-display); font-weight: 700">~3 uur</p>
+              <p class="text-3xl text-accent-500" style="font-family: var(--font-display); font-weight: 700">~3 uur</p>
               <p class="mt-3 text-sm leading-relaxed text-ink-muted">per week kwijt aan handmatig schuiven in Excel.</p>
             </div>
             <div class="bg-base p-7">
-              <p class="font-mono text-3xl text-accent-500" style="font-family: var(--font-display); font-weight: 700">115</p>
+              <p class="text-3xl text-accent-500" style="font-family: var(--font-display); font-weight: 700">115</p>
               <p class="mt-3 text-sm leading-relaxed text-ink-muted">vrijwilligers met ieder hun eigen dagen en voorkeuren.</p>
             </div>
             <div class="bg-base p-7">
-              <p class="font-mono text-3xl text-accent-500" style="font-family: var(--font-display); font-weight: 700">1 fout</p>
+              <p class="text-3xl text-accent-500" style="font-family: var(--font-display); font-weight: 700">1 fout</p>
               <p class="mt-3 text-sm leading-relaxed text-ink-muted">en een dienst staat zonder mensen, of iemand dubbel.</p>
             </div>
           </div>
@@ -128,50 +127,81 @@ import "../styles/global.css";
         </div>
       </section>
 
-      <!-- ============================ Interactief rooster ============================ -->
+      <!-- ============================ De omgeving (app) ============================ -->
       <section id="rooster" class="section-lg bg-base-2">
         <div class="container-wide">
           <div class="max-w-2xl">
-            <p class="eyebrow reveal">Zo werkt het</p>
+            <p class="eyebrow reveal">De omgeving</p>
             <h2 class="reveal mt-6 type-display-md text-ink heading-balance">
-              Eén druk op de knop. <span class="font-display-accent text-accent-500">Het hele weekrooster.</span>
+              Niet alleen een rooster. Een <span class="font-display-accent text-accent-500">werkomgeving</span>.
             </h2>
             <p class="reveal mt-5 type-lead text-ink-muted">
-              Paraat verdeelt je vrijwilligers eerlijk over de diensten, voorkomt dubbele inzet en
-              respecteert voorkeuren. Wat overblijft, zie je meteen.
+              Beheer je team, meld iemand ziek of voeg een nieuwe vrijwilliger toe. Het rooster houdt
+              er meteen rekening mee.
             </p>
           </div>
 
           <div class="reveal mt-10 overflow-hidden rounded-[1.75rem] border border-ink/10 bg-base shadow-[0_30px_80px_-50px_rgb(28_21_18/0.6)]">
-            <!-- Controlebalk -->
-            <div class="flex flex-col gap-5 border-b border-ink/10 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-              <div class="flex items-center gap-4">
-                <button id="genereer" type="button" class="btn-primary shrink-0">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v6h6M20 20v-6h-6"></path><path d="M20 9a8 8 0 0 0-14-3M4 15a8 8 0 0 0 14 3"></path></svg>
-                  <span id="genereer-label">Genereer rooster</span>
-                </button>
-                <div class="leading-tight">
-                  <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-faint">Week 23</p>
-                  <p class="text-sm font-semibold text-ink">Buurtcentrum Vlissingen</p>
+            <!-- App-balk met tabs -->
+            <div class="flex flex-col gap-4 border-b border-ink/10 p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+              <div class="inline-flex rounded-full bg-base-2 p-1" role="tablist">
+                <button type="button" data-tab="rooster" class="tab" aria-selected="true">Weekrooster</button>
+                <button type="button" data-tab="team" class="tab" aria-selected="false">Vrijwilligers</button>
+              </div>
+              <div class="leading-tight sm:text-right">
+                <p class="font-mono text-xs uppercase tracking-[0.08em] text-ink-faint">Week 23</p>
+                <p class="text-sm font-semibold text-ink">Buurtcentrum Vlissingen</p>
+              </div>
+            </div>
+
+            <!-- Paneel: Weekrooster -->
+            <div data-panel="rooster">
+              <div class="flex flex-col gap-5 border-b border-ink/10 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+                <div class="flex items-center gap-4">
+                  <button id="genereer" type="button" class="btn-primary shrink-0">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v6h6M20 20v-6h-6"></path><path d="M20 9a8 8 0 0 0-14-3M4 15a8 8 0 0 0 14 3"></path></svg>
+                    <span id="genereer-label">Genereer rooster</span>
+                  </button>
+                  <p id="rooster-onbeschikbaar" class="text-sm text-ink-muted"></p>
+                </div>
+                <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
+                  <div><span id="stat-gevuld" class="text-xl font-semibold text-ink" style="font-family: var(--font-mono)">0</span><span class="text-sm text-ink-faint" style="font-family: var(--font-mono)">/0</span><span class="ml-2 font-mono text-[0.65rem] uppercase tracking-[0.08em] text-ink-faint">plekken</span></div>
+                  <div><span id="stat-open" class="text-xl font-semibold text-accent-500" style="font-family: var(--font-mono)">0</span><span class="ml-2 font-mono text-[0.65rem] uppercase tracking-[0.08em] text-ink-faint">open</span></div>
+                  <div><span id="stat-tijd" class="text-xl font-semibold text-ink" style="font-family: var(--font-mono)">0,0</span><span class="ml-1 text-sm text-ink-faint" style="font-family: var(--font-mono)">s</span></div>
                 </div>
               </div>
-              <div class="flex flex-wrap items-center gap-x-6 gap-y-2">
-                <div><span id="stat-gevuld" class="font-mono text-xl font-semibold text-ink">0</span><span class="font-mono text-sm text-ink-faint">/0</span><span class="ml-2 font-mono text-[0.65rem] uppercase tracking-[0.08em] text-ink-faint">plekken</span></div>
-                <div><span id="stat-open" class="font-mono text-xl font-semibold text-accent-500">0</span><span class="ml-2 font-mono text-[0.65rem] uppercase tracking-[0.08em] text-ink-faint">open</span></div>
-                <div><span id="stat-tijd" class="font-mono text-xl font-semibold text-ink">0,0</span><span class="ml-1 font-mono text-sm text-ink-faint">s</span></div>
+              <div class="overflow-x-auto p-4 sm:p-6">
+                <div id="rooster-grid" class="min-w-[760px]"></div>
+              </div>
+              <div class="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-ink/10 px-5 py-4 sm:px-6">
+                <span class="flex items-center gap-2 text-sm text-ink-muted"><span class="h-2.5 w-2.5 rounded-full bg-accent-500"></span> Open plek, nog in te vullen</span>
+                <span class="flex items-center gap-2 text-sm text-ink-muted"><span class="h-2.5 w-2.5 rounded-full bg-ink/20"></span> Geen dienst</span>
+                <span id="rooster-note" class="text-sm text-ink-faint sm:ml-auto">Voorkeuren gerespecteerd, geen dubbele inzet.</span>
               </div>
             </div>
 
-            <!-- Roostergrid -->
-            <div class="overflow-x-auto p-4 sm:p-6">
-              <div id="rooster-grid" class="min-w-[760px]"></div>
-            </div>
+            <!-- Paneel: Vrijwilligers -->
+            <div data-panel="team" hidden class="p-5 sm:p-6">
+              <div id="team-summary" class="flex flex-wrap items-center gap-2"></div>
 
-            <!-- Voetregel -->
-            <div class="flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-ink/10 px-5 py-4 sm:px-6">
-              <span class="flex items-center gap-2 text-sm text-ink-muted"><span class="h-2.5 w-2.5 rounded-full bg-accent-500"></span> Open plek, nog in te vullen</span>
-              <span class="flex items-center gap-2 text-sm text-ink-muted"><span class="h-2.5 w-2.5 rounded-full bg-ink/20"></span> Geen dienst</span>
-              <span id="rooster-note" class="text-sm text-ink-faint sm:ml-auto">Voorkeuren gerespecteerd, geen dubbele inzet.</span>
+              <div class="mt-5 grid gap-3 lg:grid-cols-[1fr_auto]">
+                <form id="add-form" class="flex flex-col gap-2 sm:flex-row sm:items-center">
+                  <input id="add-naam" type="text" placeholder="Naam nieuwe vrijwilliger" autocomplete="off" class="flex-1 rounded-xl border border-ink/15 bg-base px-4 py-2.5 text-sm text-ink outline-none transition focus:border-accent-500" />
+                  <select id="add-voorkeur" class="rounded-xl border border-ink/15 bg-base px-3 py-2.5 text-sm text-ink-soft outline-none transition focus:border-accent-500"></select>
+                  <button type="submit" class="btn-primary shrink-0" style="padding: 0.65rem 1.4rem">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"></path></svg>
+                    Toevoegen
+                  </button>
+                </form>
+                <input id="team-search" type="search" placeholder="Zoek vrijwilliger..." class="rounded-xl border border-ink/15 bg-base px-4 py-2.5 text-sm text-ink outline-none transition focus:border-accent-500 lg:w-60" />
+              </div>
+
+              <div id="team-list" class="mt-5 max-h-[460px] divide-y divide-ink/10 overflow-y-auto rounded-2xl border border-ink/10"></div>
+
+              <div class="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <p id="team-hint" class="text-sm text-ink-faint">Wijzigingen tellen mee zodra je het rooster genereert.</p>
+                <button id="team-reset" type="button" class="btn-link text-sm">Voorbeeldteam herstellen</button>
+              </div>
             </div>
           </div>
           <p class="reveal mt-4 text-center font-mono text-xs uppercase tracking-[0.08em] text-ink-faint">In Excel kost dit ongeveer 3 uur. Hier 4 seconden.</p>
@@ -189,7 +219,7 @@ import "../styles/global.css";
             <article>
               <p class="step-num text-3xl">01</p>
               <h3 class="mt-5 font-display text-2xl text-ink leading-tight">Vrijwilligers eenmalig in</h3>
-              <p class="mt-4 text-ink-muted leading-relaxed text-[0.95rem]">Namen, beschikbaarheid en voorkeuren staan op één plek. Wijzigen kan altijd, maar hoeft niet elke week.</p>
+              <p class="mt-4 text-ink-muted leading-relaxed text-[0.95rem]">Namen, beschikbaarheid en voorkeuren staan op één plek. Ziek melden of iemand toevoegen doe je in een tel.</p>
             </article>
             <article>
               <p class="step-num text-3xl">02</p>
@@ -223,8 +253,8 @@ import "../styles/global.css";
             </div>
             <div class="bg-base-2 p-7">
               <p class="font-mono text-xs tracking-[0.08em] text-accent-600">02</p>
-              <p class="mt-5 font-display text-xl text-ink">Geen dubbele inzet</p>
-              <p class="mt-2 text-sm leading-relaxed text-ink-muted">Niemand staat per ongeluk op twee plekken tegelijk.</p>
+              <p class="mt-5 font-display text-xl text-ink">Houdt rekening met ziekte</p>
+              <p class="mt-2 text-sm leading-relaxed text-ink-muted">Wie ziek of afwezig is, rooster je niet per ongeluk in.</p>
             </div>
             <div class="bg-base-2 p-7">
               <p class="font-mono text-xs tracking-[0.08em] text-accent-600">03</p>
@@ -279,8 +309,9 @@ import "../styles/global.css";
       bootMotion();
 
       // =====================================================================
-      // Paraat, interactief weekrooster. Vult vrijwilligers eerlijk over de
-      // diensten, voorkomt dubbele inzet per dag, markeert open plekken.
+      // Paraat, werkomgeving + weekrooster.
+      // Beheer vrijwilligers (status, voorkeur, toevoegen) en genereer het
+      // rooster dat daarmee rekening houdt. Staat lokaal opgeslagen.
       // =====================================================================
 
       const DAGEN = ["Ma", "Di", "Wo", "Do", "Vr", "Za", "Zo"];
@@ -292,103 +323,211 @@ import "../styles/global.css";
         { naam: "Receptie en onthaal", need: [1, 1, 1, 1, 1, 0, 0] },
         { naam: "Chauffeursdienst", need: [1, 1, 1, 1, 1, 1, 0] },
       ];
-      const POOL = ["Annelies V","Mark B","Fatima E","Henk J","Sanne K","Youssef A","Greetje M","Tom V","Ridwan H","Petra S","Johan D","Linda W","Kees P","Amira N","Bram T","Joke L","Erik H","Nadia B","Wim G","Saskia V","Mohammed K","Truus D","Daan R","Ingrid M","Cor V","Esther P","Bilal Y","Marga H","Jan W","Hester K","Ali R","Corrie B","Dirk J","Yvonne S","Faisal M","Riet V"];
+      const DIENST_NAMEN = DIENSTEN.map((d) => d.naam);
+      const NAMEN = ["Annelies V","Mark B","Fatima E","Henk J","Sanne K","Youssef A","Greetje M","Tom V","Ridwan H","Petra S","Johan D","Linda W","Kees P","Amira N","Bram T","Joke L","Erik H","Nadia B","Wim G","Saskia V","Mohammed K","Truus D","Daan R","Ingrid M","Cor V","Esther P"];
 
-      const initialen = (n: string) => n.split(" ").map((p) => p[0]).join("").slice(0, 2).toUpperCase();
-      const shuffle = (arr: string[]) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+      const STORE_KEY = "paraat-team-v2";
+      const maxPat = [3, 3, 2, 3, 4];
 
-      const grid = document.getElementById("rooster-grid")!;
-      const btn = document.getElementById("genereer") as HTMLButtonElement;
-      const btnLabel = document.getElementById("genereer-label")!;
-      const statGevuld = document.getElementById("stat-gevuld")!;
-      const statOpen = document.getElementById("stat-open")!;
-      const statTijd = document.getElementById("stat-tijd")!;
-      const note = document.getElementById("rooster-note")!;
-
-      type Cell = { need: number; namen: string[] };
-
-      function plan(): { rows: Cell[][]; totalSlots: number; filled: number } {
-        const rows: Cell[][] = [];
-        let totalSlots = 0;
-        let filled = 0;
-        // Per dag bijhouden wie al ingezet is, zodat niemand dubbel staat.
-        const perDagInzet: Set<string>[] = DAGEN.map(() => new Set<string>());
-
-        // Bewust een paar plekken openlaten zodat de tool laat zien waar nog gaten zitten.
-        const totaalNodig = DIENSTEN.reduce((s, d) => s + d.need.reduce((a, b) => a + b, 0), 0);
-        const openDoel = 3 + Math.floor(Math.random() * 2); // 3 of 4 open plekken
-        const openSet = new Set<number>();
-        while (openSet.size < openDoel) openSet.add(Math.floor(Math.random() * totaalNodig));
-
-        let slotIndex = 0;
-        for (const dienst of DIENSTEN) {
-          const row: Cell[] = [];
-          for (let d = 0; d < DAGEN.length; d++) {
-            const need = dienst.need[d];
-            const namen: string[] = [];
-            if (need > 0) {
-              totalSlots += need;
-              const beschikbaar = shuffle(POOL).filter((n) => !perDagInzet[d].has(n));
-              let bi = 0;
-              for (let s = 0; s < need; s++) {
-                const isOpen = openSet.has(slotIndex);
-                slotIndex++;
-                if (isOpen || bi >= beschikbaar.length) continue; // open laten
-                const naam = beschikbaar[bi++];
-                perDagInzet[d].add(naam);
-                namen.push(naam);
-                filled++;
-              }
-            }
-            row.push({ need, namen });
-          }
-          rows.push(row);
-        }
-        return { rows, totalSlots, filled };
+      function seedTeam() {
+        const ziek = new Set([5]);
+        const afwezig = new Set([14]);
+        return NAMEN.map((naam, i) => ({
+          id: i + 1,
+          naam,
+          status: ziek.has(i) ? "ziek" : afwezig.has(i) ? "afwezig" : "beschikbaar",
+          voorkeur: i % 3 === 0 ? DIENST_NAMEN[Math.floor(i / 3) % DIENST_NAMEN.length] : "Geen voorkeur",
+          max: maxPat[i % maxPat.length],
+          nieuw: false,
+        }));
+      }
+      function loadTeam() {
+        try {
+          const raw = JSON.parse(localStorage.getItem(STORE_KEY) || "null");
+          if (Array.isArray(raw) && raw.length && raw[0] && raw[0].naam) return raw;
+        } catch (e) {}
+        return seedTeam();
+      }
+      function saveTeam() {
+        try { localStorage.setItem(STORE_KEY, JSON.stringify(team)); } catch (e) {}
       }
 
-      function render(data: { rows: Cell[][]; totalSlots: number; filled: number }) {
-        let i = 0; // globale chip-index voor de stagger
+      let team = loadTeam();
+      let dirty = true;
+
+      const initialen = (n) => n.split(" ").map((p) => p[0]).join("").slice(0, 2).toUpperCase();
+      const shuffle = (arr) => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+      const labelStatus = (s) => s === "beschikbaar" ? "Beschikbaar" : s === "ziek" ? "Ziek" : "Afwezig";
+
+      // ------------------ Elementen ------------------
+      const grid = document.getElementById("rooster-grid");
+      const btn = document.getElementById("genereer");
+      const btnLabel = document.getElementById("genereer-label");
+      const statGevuld = document.getElementById("stat-gevuld");
+      const statOpen = document.getElementById("stat-open");
+      const statTijd = document.getElementById("stat-tijd");
+      const note = document.getElementById("rooster-note");
+      const onbeschikbaarEl = document.getElementById("rooster-onbeschikbaar");
+      const teamSummary = document.getElementById("team-summary");
+      const teamList = document.getElementById("team-list");
+      const teamSearch = document.getElementById("team-search");
+      const addForm = document.getElementById("add-form");
+      const addNaam = document.getElementById("add-naam");
+      const addVoorkeur = document.getElementById("add-voorkeur");
+      const teamReset = document.getElementById("team-reset");
+      const roosterTab = document.querySelector('[data-tab="rooster"]');
+
+      // Voorkeur-opties vullen
+      ["Geen voorkeur", ...DIENST_NAMEN].forEach((o) => {
+        const opt = document.createElement("option");
+        opt.value = o; opt.textContent = o === "Geen voorkeur" ? "Geen voorkeur" : "Liefst: " + o;
+        addVoorkeur.appendChild(opt);
+      });
+
+      // ------------------ Beheer: vrijwilligers ------------------
+      function markDirty() {
+        dirty = true;
+        roosterTab.classList.add("has-update");
+      }
+
+      function renderSummary() {
+        const c = { beschikbaar: 0, ziek: 0, afwezig: 0 };
+        team.forEach((v) => { c[v.status]++; });
+        const chip = (dot, label) => `<span class="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-base px-3 py-1.5 text-sm text-ink"><span class="h-2.5 w-2.5 rounded-full ${dot}"></span>${label}</span>`;
+        teamSummary.innerHTML =
+          chip("bg-ink", `<strong class="font-semibold">${c.beschikbaar}</strong>&nbsp;beschikbaar`) +
+          chip("bg-accent-500", `<strong class="font-semibold">${c.ziek}</strong>&nbsp;ziek`) +
+          chip("bg-ink/25", `<strong class="font-semibold">${c.afwezig}</strong>&nbsp;afwezig`) +
+          `<span class="ml-1 font-mono text-xs uppercase tracking-[0.08em] text-ink-faint">${team.length} in het team</span>`;
+      }
+
+      function row(v) {
+        const segs = ["beschikbaar", "ziek", "afwezig"]
+          .map((s) => `<button type="button" class="seg-btn ${v.status === s ? "active" : ""}" data-status="${s}" data-id="${v.id}">${labelStatus(s)}</button>`)
+          .join("");
+        const opts = ["Geen voorkeur", ...DIENST_NAMEN]
+          .map((o) => `<option value="${o}" ${v.voorkeur === o ? "selected" : ""}>${o === "Geen voorkeur" ? "Geen voorkeur" : "Liefst: " + o}</option>`)
+          .join("");
+        const badge = v.nieuw ? ` <span class="ml-1 rounded-full bg-accent-100 px-2 py-0.5 align-middle text-[0.6rem] font-semibold uppercase tracking-wide text-accent-600">nieuw</span>` : "";
+        return `<div class="flex flex-col gap-3 p-3.5 sm:flex-row sm:items-center sm:gap-4">
+          <div class="flex min-w-0 flex-1 items-center gap-3">
+            <span class="vol-avatar">${initialen(v.naam)}</span>
+            <div class="min-w-0">
+              <p class="truncate font-semibold text-ink">${v.naam}${badge}</p>
+              <p class="font-mono text-[0.62rem] uppercase tracking-[0.06em] text-ink-faint">max ${v.max} diensten</p>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2">
+            <select data-role="voorkeur" data-id="${v.id}" class="rounded-lg border border-ink/15 bg-base px-2.5 py-1.5 text-xs text-ink-soft outline-none transition focus:border-accent-500" title="Voorkeursdienst">${opts}</select>
+            <div class="seg">${segs}</div>
+            <button type="button" data-action="remove" data-id="${v.id}" class="grid h-7 w-7 place-items-center rounded-full text-ink-faint transition hover:bg-accent-500/10 hover:text-accent-600" title="Verwijderen" aria-label="Verwijderen">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+            </button>
+          </div>
+        </div>`;
+      }
+
+      function renderTeamList() {
+        const q = (teamSearch.value || "").trim().toLowerCase();
+        const list = q ? team.filter((v) => v.naam.toLowerCase().includes(q)) : team;
+        teamList.innerHTML = list.length
+          ? list.map(row).join("")
+          : `<p class="p-6 text-center text-sm text-ink-faint">Geen vrijwilliger gevonden.</p>`;
+      }
+
+      function renderTeam() { renderSummary(); renderTeamList(); }
+
+      teamList.addEventListener("click", (e) => {
+        const t = e.target.closest("[data-id]");
+        if (!t) return;
+        const id = Number(t.getAttribute("data-id"));
+        const v = team.find((x) => x.id === id);
+        if (!v) return;
+        if (t.dataset.status) { v.status = t.dataset.status; v.nieuw = false; saveTeam(); renderTeam(); markDirty(); }
+        else if (t.dataset.action === "remove") { team = team.filter((x) => x.id !== id); saveTeam(); renderTeam(); markDirty(); }
+      });
+      teamList.addEventListener("change", (e) => {
+        const sel = e.target.closest('[data-role="voorkeur"]');
+        if (!sel) return;
+        const v = team.find((x) => x.id === Number(sel.getAttribute("data-id")));
+        if (v) { v.voorkeur = sel.value; saveTeam(); markDirty(); }
+      });
+      teamSearch.addEventListener("input", renderTeamList);
+      addForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const naam = (addNaam.value || "").trim();
+        if (!naam) return;
+        const id = team.reduce((m, v) => Math.max(m, v.id), 0) + 1;
+        team.push({ id, naam, status: "beschikbaar", voorkeur: addVoorkeur.value || "Geen voorkeur", max: 3, nieuw: true });
+        saveTeam(); renderTeam(); markDirty();
+        addNaam.value = ""; addVoorkeur.value = "Geen voorkeur"; addNaam.focus();
+        document.getElementById("team-hint").textContent = `${naam} toegevoegd. Genereer het rooster opnieuw om mee te nemen.`;
+      });
+      teamReset.addEventListener("click", () => {
+        team = seedTeam(); saveTeam(); renderTeam(); markDirty();
+        document.getElementById("team-hint").textContent = "Voorbeeldteam hersteld.";
+      });
+
+      // ------------------ Rooster genereren ------------------
+      function plan() {
+        const available = team.filter((v) => v.status === "beschikbaar").map((v) => ({ id: v.id, naam: v.naam, voorkeur: v.voorkeur, rem: v.max }));
+        const perDag = DAGEN.map(() => new Set());
+        let totalSlots = 0, filled = 0;
+        const rows = DIENSTEN.map((dienst) =>
+          dienst.need.map((need, d) => {
+            const namen = [];
+            if (need > 0) {
+              totalSlots += need;
+              for (let s = 0; s < need; s++) {
+                let cands = available.filter((v) => v.rem > 0 && !perDag[d].has(v.id));
+                if (!cands.length) continue;
+                cands = shuffle(cands).sort((a, b) => {
+                  const ap = a.voorkeur === dienst.naam ? 1 : 0;
+                  const bp = b.voorkeur === dienst.naam ? 1 : 0;
+                  if (ap !== bp) return bp - ap;
+                  return b.rem - a.rem;
+                });
+                const pick = cands[0];
+                pick.rem--; perDag[d].add(pick.id); namen.push(pick.naam); filled++;
+              }
+            }
+            return { need, namen };
+          })
+        );
+        const onbeschikbaar = team.filter((v) => v.status === "ziek" || v.status === "afwezig").length;
+        return { rows, totalSlots, filled, onbeschikbaar };
+      }
+
+      function renderGrid(rows) {
+        let i = 0;
         const head =
-          `<div class="grid grid-cols-[150px_repeat(7,1fr)] gap-2">` +
-          `<div></div>` +
+          `<div class="grid grid-cols-[150px_repeat(7,1fr)] gap-2"><div></div>` +
           DAGEN.map((d) => `<div class="pb-2 text-center font-mono text-[0.7rem] uppercase tracking-[0.08em] text-ink-faint">${d}</div>`).join("") +
           `</div>`;
-
-        const body = data.rows
-          .map((row, r) => {
-            const cells = row
+        const body = rows
+          .map((r, ri) => {
+            const cells = r
               .map((cell) => {
-                if (cell.need === 0) {
-                  return `<div class="flex min-h-[52px] items-center justify-center rounded-xl bg-ink/[0.03] text-ink/20">·</div>`;
-                }
-                const chips = cell.namen
-                  .map((n) => `<span class="chip" style="--i:${i++}" title="${n}">${initialen(n)}</span>`)
-                  .join("");
+                if (cell.need === 0) return `<div class="flex min-h-[52px] items-center justify-center rounded-xl bg-ink/[0.03] text-ink/20">·</div>`;
+                const chips = cell.namen.map((n) => `<span class="chip" style="--i:${i++}" title="${n}">${initialen(n)}</span>`).join("");
                 const open = cell.need - cell.namen.length;
                 const openPill = open > 0 ? `<span class="chip chip-open" style="--i:${i++}">+${open}</span>` : "";
                 return `<div class="flex min-h-[52px] flex-wrap content-center gap-1 rounded-xl border p-1.5 ${open > 0 ? "border-accent-500/40 bg-accent-500/[0.04]" : "border-ink/10 bg-base"}">${chips}${openPill}</div>`;
               })
               .join("");
-            return `<div class="grid grid-cols-[150px_repeat(7,1fr)] items-stretch gap-2 ${r > 0 ? "mt-2" : ""}">` +
-              `<div class="flex items-center pr-2 text-sm font-semibold text-ink">${DIENSTEN[r].naam}</div>` +
-              cells +
-              `</div>`;
+            return `<div class="grid grid-cols-[150px_repeat(7,1fr)] items-stretch gap-2 ${ri > 0 ? "mt-2" : ""}"><div class="flex items-center pr-2 text-sm font-semibold text-ink">${DIENSTEN[ri].naam}</div>${cells}</div>`;
           })
           .join("");
-
         grid.innerHTML = head + body;
       }
 
-      function countUp(el: HTMLElement, to: number, opts: { decimals?: number; suffix?: string } = {}) {
-        const { decimals = 0, suffix = "" } = opts;
-        const dur = 900;
-        const start = performance.now();
-        function step(now: number) {
+      function countUp(el, to, decimals) {
+        decimals = decimals || 0;
+        const dur = 900, start = performance.now();
+        function step(now) {
           const t = Math.min(1, (now - start) / dur);
           const eased = 1 - Math.pow(1 - t, 3);
-          const val = (to * eased).toFixed(decimals).replace(".", ",");
-          el.textContent = val + suffix;
+          el.textContent = (to * eased).toFixed(decimals).replace(".", ",");
           if (t < 1) requestAnimationFrame(step);
         }
         requestAnimationFrame(step);
@@ -401,65 +540,89 @@ import "../styles/global.css";
         btn.disabled = true;
         btnLabel.textContent = "Bezig met puzzelen...";
         note.textContent = "Vrijwilligers verdelen over de diensten...";
+        roosterTab.classList.remove("has-update");
 
         window.setTimeout(() => {
           const data = plan();
-          render(data);
+          renderGrid(data.rows);
           const open = data.totalSlots - data.filled;
           statGevuld.textContent = "0";
           countUp(statGevuld, data.filled);
-          // toon noemer
-          const gevuldWrap = statGevuld.nextElementSibling as HTMLElement;
-          if (gevuldWrap) gevuldWrap.textContent = "/" + data.totalSlots;
+          const denom = statGevuld.nextElementSibling;
+          if (denom) denom.textContent = "/" + data.totalSlots;
           countUp(statOpen, open);
-          countUp(statTijd, 4.2, { decimals: 1 });
-          note.textContent = open > 0 ? `${open} open plekken om nog in te vullen.` : "Volledig gevuld.";
-
+          countUp(statTijd, 4.2, 1);
+          onbeschikbaarEl.textContent = data.onbeschikbaar > 0 ? `${data.onbeschikbaar} ziek of afwezig, niet ingeroosterd` : "Iedereen beschikbaar";
+          note.textContent = open > 0 ? `${open} open plekken om nog in te vullen.` : "Volledig gevuld, mooi werk.";
           btnLabel.textContent = "Genereer opnieuw";
           btn.disabled = false;
           busy = false;
+          dirty = false;
         }, 620);
       }
-
       btn.addEventListener("click", genereer);
 
-      // Automatisch genereren zodra het rooster in beeld komt.
+      // ------------------ Tabs ------------------
+      const tabs = document.querySelectorAll("[data-tab]");
+      const panels = document.querySelectorAll("[data-panel]");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const name = tab.getAttribute("data-tab");
+          tabs.forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+          panels.forEach((p) => { p.hidden = p.getAttribute("data-panel") !== name; });
+          if (name === "rooster" && dirty) genereer();
+        });
+      });
+
+      // ------------------ Init ------------------
+      renderTeam();
       const io = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) { genereer(); io.disconnect(); }
-        }
-      }, { threshold: 0.3 });
-      io.observe(document.getElementById("rooster")!);
+        for (const e of entries) { if (e.isIntersecting) { genereer(); io.disconnect(); } }
+      }, { threshold: 0.25 });
+      io.observe(document.getElementById("rooster"));
     </script>
 
     <style is:global>
       .chip {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 1.85rem;
-        height: 1.85rem;
-        padding: 0 0.4rem;
-        border-radius: 0.55rem;
-        background: var(--color-base-2);
-        border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
-        font-family: var(--font-mono);
-        font-size: 0.66rem;
-        font-weight: 500;
-        color: var(--color-ink-soft);
-        opacity: 0;
-        transform: translateY(6px) scale(0.9);
-        animation: chipIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        animation-delay: calc(var(--i) * 16ms);
+        display: inline-flex; align-items: center; justify-content: center;
+        min-width: 1.85rem; height: 1.85rem; padding: 0 0.4rem; border-radius: 0.55rem;
+        background: var(--color-base-2); border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+        font-family: var(--font-mono); font-size: 0.66rem; font-weight: 500; color: var(--color-ink-soft);
+        opacity: 0; transform: translateY(6px) scale(0.9);
+        animation: chipIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; animation-delay: calc(var(--i) * 16ms);
       }
-      .chip-open {
-        background: var(--color-accent-500);
-        border-color: transparent;
-        color: #fff;
+      .chip-open { background: var(--color-accent-500); border-color: transparent; color: #fff; }
+      @keyframes chipIn { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+      .tab {
+        position: relative; padding: 0.5rem 1.1rem; border-radius: 999px;
+        font-size: 0.85rem; font-weight: 600; color: var(--color-ink-muted);
+        transition: background 0.3s, color 0.3s;
       }
-      @keyframes chipIn {
-        to { opacity: 1; transform: translateY(0) scale(1); }
+      .tab[aria-selected="true"] { background: var(--color-base); color: var(--color-ink); box-shadow: 0 2px 10px -5px rgb(0 0 0 / 0.35); }
+      .tab.has-update[aria-selected="false"]::after {
+        content: ""; position: absolute; top: 0.35rem; right: 0.55rem;
+        width: 0.45rem; height: 0.45rem; border-radius: 999px; background: var(--color-accent-500);
       }
+
+      .vol-avatar {
+        display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+        height: 2.25rem; width: 2.25rem; border-radius: 999px;
+        background: var(--color-base-2); border: 1px solid color-mix(in srgb, var(--color-ink) 10%, transparent);
+        font-family: var(--font-mono); font-size: 0.68rem; font-weight: 500; color: var(--color-ink-soft);
+      }
+
+      .seg { display: inline-flex; border-radius: 999px; background: var(--color-base-2); padding: 2px; }
+      .seg-btn {
+        padding: 0.35rem 0.7rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+        color: var(--color-ink-muted); white-space: nowrap; transition: background 0.25s, color 0.25s;
+      }
+      .seg-btn:hover { color: var(--color-ink); }
+      .seg-btn.active { color: #fff; }
+      .seg-btn.active[data-status="beschikbaar"] { background: var(--color-ink); }
+      .seg-btn.active[data-status="ziek"] { background: var(--color-accent-500); }
+      .seg-btn.active[data-status="afwezig"] { background: color-mix(in srgb, var(--color-ink) 32%, transparent); color: var(--color-ink); }
+
       @media (prefers-reduced-motion: reduce) {
         .chip { animation: none; opacity: 1; transform: none; }
       }
